@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Absent Records</h2>
+  <p>{{ rows }} row(s) found.</p>
+
+  <a class="btn btn-success mb-3"
+   href="{{ url_for('download', token=token) }}">Download .XLSX</a>
+
+  {{ tables|safe }}
+  <a class="btn btn-secondary mt-4" href="{{ url_for('index') }}">Process Another File</a>
+{% endblock %}
